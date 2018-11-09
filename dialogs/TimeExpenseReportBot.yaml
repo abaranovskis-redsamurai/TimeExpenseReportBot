@@ -1,0 +1,113 @@
+#metadata: information about the flow
+#  platformVersion: the version of the bots platform that this flow was written to work with 
+metadata:
+  platformVersion: 1.0
+main: true
+name: TimeExpenseReportBot
+#context: Define the variables which will used throughout the dialog flow here.
+context:
+  variables:
+    projectlist: "ProjectList"
+    tasklist: "TaskList"
+    timelist: "TimeList"
+    confirm: "YES_NO"
+    confirmanother: "YES_NO"
+    taskdetails: "string" 
+    iResult: "nlpresult"
+states:
+  intent:
+    component: "System.Intent"
+    properties:
+      variable: "iResult"
+      confidenceThreshold: 0.4
+    transitions:
+      actions:
+        TimeLogging: "timelogging"
+        ExpenseLogging: "expenselogging"
+        unresolvedIntent: "unresolved"
+  
+  timelogging:
+    component: "System.List"
+    properties:
+      options: "${projectlist.type.enumValues}"
+      prompt: "Choose project to log time"
+      variable: "projectlist"
+    transitions: {}
+  selecttask:
+    component: "System.List"
+    properties:
+      options: "${tasklist.type.enumValues}"
+      prompt: "Choose task to log time for project ${projectlist.value}"
+      variable: "tasklist"
+    transitions: {}
+  selecttime:
+    component: "System.List"
+    properties:
+      options: "${timelist.type.enumValues}"
+      prompt: "Choose time (hours) spent for ${tasklist.value} task"
+      variable: "timelist"
+    transitions: {}
+  yesnoconfirm:
+    component: "System.List"
+    properties:
+      options: "Yes,No"
+      prompt: "Do you want to type task details?"
+      variable: "confirm"
+    transitions: {}  
+  confirmtaskdetails:  
+    component: "System.ConditionEquals"
+    properties:
+      source: "${confirm.value.yesno}"
+      value: "NO"
+    transitions:
+      actions:
+        equal: "taskloggingdone"
+        notequal: "entertaskdetails" 
+  entertaskdetails:
+    component: "System.Text"
+    properties:
+      prompt: "Please provide task details"
+      variable: "taskdetails"
+    transitions: {}
+  taskloggingdone:
+    component: "System.List"
+    properties:
+      options: "Yes,No"
+      prompt: "Time logged: ${timelist.value} hours spent for ${tasklist.value} in project ${projectlist.value}. Details: ${taskdetails}. Continue?"
+      variable: "confirmanother"
+    transitions: {}
+  confirmanothertask:  
+    component: "System.ConditionEquals"
+    properties:
+      source: "${confirmanother.value.yesno}"
+      value: "NO"
+    transitions:
+      actions:
+        equal: "finishflow"
+        notequal: "nexttask" 
+  finishflow:
+    component: "System.Output"
+    properties:
+      text: "Thanks for time logging. Till next time."
+    transitions:
+      return: "finishflow"
+  nexttask:
+    component: "System.Output"
+    properties:
+      text: "What else you want to do?"
+    transitions:
+      return: "nexttask"
+  
+  expenselogging:
+    component: "System.Output"
+    properties:
+      text: "Expense logging is not ready yet"
+    transitions:
+      return: "expenselogging"
+  
+  unresolved:
+    component: "System.Output"
+    properties:
+      text: "I don't understand. What do you want to do?"
+    transitions:
+      return: "unresolved"

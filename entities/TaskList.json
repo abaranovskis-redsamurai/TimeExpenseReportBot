@@ -1,0 +1,22 @@
+{
+  "name" : "TaskList",
+  "type" : "ENUMVALUES",
+  "enumValues" : [ {
+    "canonicalName" : "Performance tuning",
+    "synonyms" : null
+  }, {
+    "canonicalName" : "Code audit",
+    "synonyms" : null
+  }, {
+    "canonicalName" : "Development",
+    "synonyms" : null
+  }, {
+    "canonicalName" : "Testing",
+    "synonyms" : null
+  }, {
+    "canonicalName" : "Bug fixing",
+    "synonyms" : null
+  } ],
+  "namedEntityRuleParams" : [ ],
+  "prompts" : [ "Please enter Entity2" ]
+}

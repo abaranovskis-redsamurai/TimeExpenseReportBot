@@ -1,0 +1,18 @@
+{
+  "name" : "ExpenseLogging",
+  "type" : "NLPIntent",
+  "intentParameters" : [ ],
+  "exampleData" : [ {
+    "sentence" : "Expense logging",
+    "exampleEntities" : [ ]
+  }, {
+    "sentence" : "Log travel and hotel receipts",
+    "exampleEntities" : [ ]
+  }, {
+    "sentence" : "I want to log expenses",
+    "exampleEntities" : [ ]
+  }, {
+    "sentence" : "Submit expenses",
+    "exampleEntities" : [ ]
+  } ]
+}

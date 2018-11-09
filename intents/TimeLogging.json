@@ -1,0 +1,45 @@
+{
+  "name" : "TimeLogging",
+  "type" : "NLPIntent",
+  "intentParameters" : [ {
+    "name" : "ProjectList",
+    "required" : true,
+    "entity" : "ProjectList"
+  }, {
+    "name" : "TaskList",
+    "required" : true,
+    "entity" : "TaskList"
+  }, {
+    "name" : "TimeList",
+    "required" : true,
+    "entity" : "TimeList"
+  } ],
+  "exampleData" : [ {
+    "sentence" : "Log worked time",
+    "exampleEntities" : [ ]
+  }, {
+    "sentence" : "Save task info",
+    "exampleEntities" : [ ]
+  }, {
+    "sentence" : "I want to log today project tasks",
+    "exampleEntities" : [ ]
+  }, {
+    "sentence" : "Time reporting",
+    "exampleEntities" : [ ]
+  }, {
+    "sentence" : "Submit time spent for project today",
+    "exampleEntities" : [ ]
+  }, {
+    "sentence" : "Submit work",
+    "exampleEntities" : [ ]
+  }, {
+    "sentence" : "Task logging",
+    "exampleEntities" : [ ]
+  }, {
+    "sentence" : "Project task entry",
+    "exampleEntities" : [ ]
+  }, {
+    "sentence" : "Report project hours",
+    "exampleEntities" : [ ]
+  } ]
+}

@@ -1,0 +1,22 @@
+{
+  "name" : "ProjectList",
+  "type" : "ENUMVALUES",
+  "enumValues" : [ {
+    "canonicalName" : "Manhattan Project",
+    "synonyms" : null
+  }, {
+    "canonicalName" : "Kodiak",
+    "synonyms" : null
+  }, {
+    "canonicalName" : "Titan",
+    "synonyms" : null
+  }, {
+    "canonicalName" : "Code Talkers",
+    "synonyms" : null
+  }, {
+    "canonicalName" : "X Lab",
+    "synonyms" : null
+  } ],
+  "namedEntityRuleParams" : [ ],
+  "prompts" : [ "Please enter Entity1" ]
+}

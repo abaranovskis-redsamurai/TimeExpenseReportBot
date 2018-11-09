@@ -1,0 +1,5 @@
+{
+  "name" : "TimeExpenseReportBot",
+  "type" : "USER",
+  "intentTrainer" : "Sakura"
+}

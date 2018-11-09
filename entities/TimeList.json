@@ -1,0 +1,19 @@
+{
+  "name" : "TimeList",
+  "type" : "ENUMVALUES",
+  "enumValues" : [ {
+    "canonicalName" : "2",
+    "synonyms" : null
+  }, {
+    "canonicalName" : "4",
+    "synonyms" : null
+  }, {
+    "canonicalName" : "6",
+    "synonyms" : null
+  }, {
+    "canonicalName" : "8",
+    "synonyms" : null
+  } ],
+  "namedEntityRuleParams" : [ ],
+  "prompts" : [ "Please enter Entity3" ]
+}
